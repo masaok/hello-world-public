@@ -1,0 +1,28 @@
+{
+  "name": "@masaok/hello-world-public",
+  "version": "1.0.0",
+  "module": "index.ts",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "@masaok:registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "clean": "rm -rf dist",
+    "ci": "npm run clean && npm i && npm run build",
+    "test": "jest --passWithNoTests",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "jest": "^29.7.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
